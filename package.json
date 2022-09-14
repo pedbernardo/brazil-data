@@ -1,0 +1,38 @@
+{
+  "name": "brazil-scrapping",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "type": "module",
+  "private": true,
+  "scripts": {
+    "prepare": "husky install",
+    "lint": "eslint . --fix",
+    "clean": "rimraf dist",
+    "dev": "node src/main.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "lint-staged": {
+    "*.js": "npm run lint"
+  },
+  "author": "Pedro Bernardo <pedrovbernardo@gmail.com>",
+  "devDependencies": {
+    "@commitlint/cli": "^17.0.3",
+    "@commitlint/config-conventional": "^17.0.3",
+    "eslint": "8.0.1",
+    "eslint-config-standard": "^17.0.0",
+    "eslint-plugin-import": "2.25.2",
+    "eslint-plugin-n": "15.0.0",
+    "eslint-plugin-promise": "6.0.0",
+    "husky": "^8.0.1",
+    "lint-staged": "^13.0.3",
+    "rimraf": "^3.0.2"
+  },
+  "dependencies": {
+    "@fast-csv/parse": "^4.3.6",
+    "axios": "^0.27.2",
+    "jsdom": "^20.0.0",
+    "json2csv": "^5.0.7",
+    "ramda": "^0.28.0"
+  }
+}
