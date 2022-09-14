@@ -17,9 +17,12 @@ async function getFinanceirasFromDocs () {
   return new Promise((resolve) => {
     csv.parseFile(FINANCEIRAS_FILE_PATH, { headers: true })
       .on('error', console.error)
-      .on('data', row => financeiras.push(
-        parseFinanceiraRow(row)
-      ))
+      .on('data', row => {
+        if (row.Número_Código === 'n/a') return
+        financeiras.push(
+          parseFinanceiraRow(row)
+        )
+      })
       .on('end', () => resolve(financeiras))
   })
 }
