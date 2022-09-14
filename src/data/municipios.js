@@ -20,7 +20,6 @@ async function getDataFromIbge () {
 
 function parseIbgeResponse (data) {
   return data.map(entry => ({
-    estado: entry['UF-nome'],
     estadoSigla: entry['UF-sigla'],
     municipio: entry['municipio-nome']
   }))

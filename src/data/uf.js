@@ -19,5 +19,5 @@ async function getDataFromIbge () {
 }
 
 function parseIbgeResponse (data) {
-  return data.map(({ sigla }) => ({ sigla }))
+  return data.map(({ sigla, nome }) => ({ sigla, nome }))
 }

@@ -36,7 +36,10 @@ function parseConclaPage (html) {
   ]
     .map(item => (item.textContent ?? '').trim())
     .filter(item => pipe(stripeCodigoNaturezaJuridica, isCodigoNaturezaJuridica)(item))
-    .map(item => ({ natureza_juridica: item }))
+    .map(item => ({
+      codigo: stripeCodigoNaturezaJuridica(item),
+      natureza_juridica: item.replaceAll('–', '-').split(' - ')[1]
+    }))
 
   return items
 }
